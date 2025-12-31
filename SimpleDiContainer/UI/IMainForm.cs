@@ -1,12 +1,11 @@
-﻿using System;
+﻿using SimpleDiContainer.Data;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SimpleDiContainer
+
+namespace SimpleDiContainer.UI
 {
-    public interface IUserView
+    public interface IMainForm
     {
         void DisplayUsers(List<User> users);
         void ClearFields();

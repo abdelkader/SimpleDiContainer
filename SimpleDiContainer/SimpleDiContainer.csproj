@@ -46,23 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="UI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="UI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMainForm.cs" />
-    <Compile Include="IUserRepository.cs" />
-    <Compile Include="IUserService.cs" />
+    <Compile Include="UI\IMainForm.cs" />
+    <Compile Include="Data\IUserRepository.cs" />
+    <Compile Include="Services\IUserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleDiContainer.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserPresenter.cs" />
-    <Compile Include="UserRepository.cs" />
-    <Compile Include="UserService.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="DI\SimpleDiContainer.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Presenter\UserPresenter.cs" />
+    <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

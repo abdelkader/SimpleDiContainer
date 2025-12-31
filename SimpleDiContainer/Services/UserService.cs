@@ -1,10 +1,9 @@
-﻿using System;
+﻿using SimpleDiContainer.Data;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SimpleDiContainer
+
+namespace SimpleDiContainer.Services
 {
     public class UserService : IUserService
     {
@@ -22,7 +21,7 @@ namespace SimpleDiContainer
         public void AddUser(string firstName, string lastName, string email)
         {
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
-                throw new ArgumentException("Le prénom et nom sont obligatoires");
+                throw new ArgumentException("First and last name are required");
 
             _repository.Add(new User
             {
@@ -35,7 +34,7 @@ namespace SimpleDiContainer
         public void UpdateUser(int id, string firstName, string lastName, string email)
         {
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
-                throw new ArgumentException("Le prénom et nom sont obligatoires");
+                throw new ArgumentException("First and last name are required");
 
             _repository.Update(new User
             {

@@ -1,10 +1,14 @@
-﻿using System;
+﻿using SimpleDiContainer.Data;
+using SimpleDiContainer.Presenter;
+using SimpleDiContainer.Services;
+using SimpleDiContainer.UI;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SimpleDiContainer
 {
-    public partial class MainForm : Form, IUserView
+    public partial class MainForm : Form, IMainForm
     {
         private readonly UserPresenter _presenter;
 
@@ -95,6 +99,6 @@ namespace SimpleDiContainer
             MessageBox.Show(error, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-
+        
     }
 }

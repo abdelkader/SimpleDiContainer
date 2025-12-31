@@ -1,10 +1,8 @@
-﻿using System;
+﻿using SimpleDiContainer.Data;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SimpleDiContainer
+
+namespace SimpleDiContainer.Services
 {
     public interface IUserService
     {

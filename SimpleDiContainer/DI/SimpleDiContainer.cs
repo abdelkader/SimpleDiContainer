@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleDiContainer
+namespace SimpleDiContainer.DI
 {
     public class SimpleDiContainer
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 
 
-namespace SimpleDiContainer
+namespace SimpleDiContainer.Data
 {
     public class UserRepository : IUserRepository
     {

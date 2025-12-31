@@ -1,14 +1,16 @@
-﻿using System;
+﻿using SimpleDiContainer.Services;
+using SimpleDiContainer.UI;
+using System;
 
 
-namespace SimpleDiContainer
+namespace SimpleDiContainer.Presenter
 {
     public class UserPresenter
     {
-        private readonly IUserView _view;
+        private readonly IMainForm _view;
         private readonly IUserService _service;
 
-        public UserPresenter(IUserView view, IUserService service)
+        public UserPresenter(IMainForm view, IUserService service)
         {
             _view = view;
             _service = service;
@@ -30,7 +32,7 @@ namespace SimpleDiContainer
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Erreur: {ex.Message}");
+                _view.ShowError($"Error: {ex.Message}");
             }
         }
 
@@ -39,12 +41,12 @@ namespace SimpleDiContainer
             try
             {
                 _service.AddUser(_view.FirstName, _view.LastName, _view.Email);
-                _view.ShowMessage("Utilisateur ajouté avec succès");
+                _view.ShowMessage("User already exists!");
                 LoadUsers(sender, e);
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Erreur: {ex.Message}");
+                _view.ShowError($"Error: {ex.Message}");
             }
         }
 
@@ -54,17 +56,17 @@ namespace SimpleDiContainer
             {
                 if (_view.SelectedUserId <= 0)
                 {
-                    _view.ShowError("Sélectionnez un utilisateur");
+                    _view.ShowError("Select a user");
                     return;
                 }
 
                 _service.UpdateUser(_view.SelectedUserId, _view.FirstName, _view.LastName, _view.Email);
-                _view.ShowMessage("Utilisateur modifié avec succès");
+                _view.ShowMessage("User modified with succes");
                 LoadUsers(sender, e);
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Erreur: {ex.Message}");
+                _view.ShowError($"Error: {ex.Message}");
             }
         }
 
@@ -74,17 +76,17 @@ namespace SimpleDiContainer
             {
                 if (_view.SelectedUserId <= 0)
                 {
-                    _view.ShowError("Sélectionnez un utilisateur");
+                    _view.ShowError("Select a user");
                     return;
                 }
 
                 _service.DeleteUser(_view.SelectedUserId);
-                _view.ShowMessage("Utilisateur supprimé avec succès");
+                _view.ShowMessage("User deleted successfully");
                 LoadUsers(sender, e);
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Erreur: {ex.Message}");
+                _view.ShowError($"Error: {ex.Message}");
             }
         }
 
@@ -104,7 +106,7 @@ namespace SimpleDiContainer
             }
             catch (Exception ex)
             {
-                _view.ShowError($"Erreur: {ex.Message}");
+                _view.ShowError($"Error: {ex.Message}");
             }
         }
     }
